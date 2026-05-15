@@ -6,3 +6,28 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Fri May 15 06:53:39 PM UTC 2026: 
+ graph.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:52:49: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   52 |     MapPair *pair = map_search(g->adjacencyMap, label1);
+      |                                                 ^~~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:55:20: error: passing argument 1 of ‘strcpy’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   55 |         if (strcpy(label2, arista->target)) return arista->weight;
+      |                    ^~~~~~
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/features.h:511,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/libc-header-start.h:33,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdio.h:28,
+                 from test.c:1:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/string_fortified.h:77:16: note: expected ‘char *’ but argument is of type ‘const char *’
+   77 | __NTH (strcpy (__fortify_clang_overload_arg (char *, __restrict, __dest),
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+00c29b5
