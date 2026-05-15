@@ -48,7 +48,6 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
     if (!g || !src || !dest) return;
     MapPair *pair = map_search(g->adjacencyMap, (void *)src);
     if (pair == NULL) return;
-    int i = 0; // Coincidencias
     for (Edge *arista = list_first(pair->value) ; arista != NULL ; arista = list_next(pair->value))
     {
         if (strcmp(arista->target, dest) == 0) return;
