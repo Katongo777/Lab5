@@ -164,3 +164,30 @@ graph.c:42:11: error: unused variable ‘lista’ [-Werror=unused-variable]
       |           ^~~~~
 cc1: all warnings being treated as errors
 89eabe6
+Fri May 15 10:31:25 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:40:68: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+   40 |     if (map_search(g->adjacencyMap, (void *)label) != NULL) return NULL;
+      |                                                                    ^~~~
+graph.c:37:6: note: declared here
+   37 | void addNode(Graph* g, const char* label)
+      |      ^~~~~~~
+graph.c:43:16: error: expected expression before ‘Map’
+   43 |     map_insert(Map *g->adjacencyMap, (void *)label, (void *)lista);
+      |                ^~~
+graph.c:43:5: error: too few arguments to function ‘map_insert’
+   43 |     map_insert(Map *g->adjacencyMap, (void *)label, (void *)lista);
+      |     ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:18:6: note: declared here
+   18 | void map_insert(Map *map, void *key, void *value);
+      |      ^~~~~~~~~~
+graph.c:42:11: error: unused variable ‘lista’ [-Werror=unused-variable]
+   42 |     List *lista = list_create();
+      |           ^~~~~
+cc1: all warnings being treated as errors
+9ecc119

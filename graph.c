@@ -34,13 +34,13 @@ Graph* createGraph()
     return grafo;
 }
 
-void addNode(Graph* g, const char* label) 
+void addNode(Graph* g, const char* label)
 {
     if (!g || !label) return;
     if (map_search(g->adjacencyMap, (void *)label) != NULL) return NULL;
     
     List *lista = list_create();
-    map_insert(Map *g->adjacencyMap, label, lista)
+    map_insert(Map *g->adjacencyMap, (void *)label, (void *)lista);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
