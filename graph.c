@@ -51,9 +51,8 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
     int i = 0; // Coincidencias
     for (Edge *arista = list_first(pair->value) ; arista != NULL ; arista = list_next(pair->value))
     {
-        if (strcmp(arista->target, dest) == 0) i++;
+        if (strcmp(arista->target, dest) == 0) return;
     }
-    if (i != 0) return;
     Edge *nuevo = (Edge *)malloc(sizeof(Edge));
     nuevo->target = strdup(dest);
     nuevo->weight = weight;

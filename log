@@ -214,3 +214,14 @@ Fri May 15 10:48:15 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 ebf5aca
+Fri May 15 10:48:57 PM UTC 2026: 
+ graph.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:51:9: error: unused variable ‘i’ [-Werror=unused-variable]
+   51 |     int i = 0; // Coincidencias
+      |         ^
+cc1: all warnings being treated as errors
+2a85709
