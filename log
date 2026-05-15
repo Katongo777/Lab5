@@ -67,3 +67,13 @@ Fri May 15 07:06:21 PM UTC 2026:
  tests:  1|5
 ========================================
 3dcff28
+Fri May 15 10:03:27 PM UTC 2026: 
+ graph.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:32:48: error: invalid application of ‘sizeof’ to incomplete type ‘Map’
+   32 |     grafo->adjacencyMap = (Map *)malloc(sizeof(Map));
+      |                                                ^~~
+48e1732

@@ -26,7 +26,10 @@ int is_equal_string(void *key1, void *key2) {
  *         IMPLEMENTACIÓN
  * ========================================= */
 
-Graph* createGraph() {
+Graph* createGraph() 
+{
+    Graph *grafo = (Graph *)malloc(sizeof(Graph));
+    grafo->adjacencyMap = (Map *)malloc(sizeof(Map));
     return NULL;
 }
 
@@ -55,7 +58,6 @@ int getWeight(Graph* g, const char* label1, const char* label2)
     {
         if (strcmp(arista->target, label2) == 0) return arista->weight;            
     }
-
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
     return -1; 
 }
