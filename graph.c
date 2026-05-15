@@ -52,7 +52,7 @@ int getWeight(Graph* g, const char* label1, const char* label2)
     MapPair *pair = map_search(g->adjacencyMap, label1);
     for (Edge *arista = list_first(pair->value) ; arista != NULL ; arista = list_next(pair->value))
     {
-        if (strcpy(label2, arista->target)) return arista->weight;            
+        if (strcmp(arista->target, label2)) return arista->weight;            
     }
 
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
