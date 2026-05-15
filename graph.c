@@ -43,9 +43,21 @@ void addNode(Graph* g, const char* label)
     map_insert(g->adjacencyMap, (void *)label, (void *)lista);
 }
 
-void addEdge(Graph* g, const char* src, const char* dest, int weight) {
+void addEdge(Graph* g, const char* src, const char* dest, int weight)
+{
     if (!g || !src || !dest) return;
-
+    MapPair *pair = map_search(g->adjacencyMap, (void *)src);
+    if (pair == NULL) return -1;
+    int i = 0; // Coincidencias
+    for (Edge *arista = list_first(pair->value) ; arista != NULL ; arista = list_next(pair->value))
+    {
+        if (strcmp(arista->target, dest) == 0) i++;
+    }
+    if (i != 0) return;
+    Edge *nuevo = (Edge *)malloc(sizeof(Edge));
+    nuevo->target = strdup(dest);
+    nuevo->weight = weight;
+    list_pushBack(pair->value, nuevo); 
 }
 
 List* getEdges(Graph* g, const char* label) {
