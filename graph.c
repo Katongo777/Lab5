@@ -29,14 +29,18 @@ int is_equal_string(void *key1, void *key2) {
 Graph* createGraph() 
 {
     Graph *grafo = (Graph *)malloc(sizeof(Graph));
-    if (grafo == NULL) return NULL;
+    if (grafo == NULL) exit(EXIT_FAILURE);
     grafo->adjacencyMap = map_create(is_equal_string);
     return grafo;
 }
 
-void addNode(Graph* g, const char* label) {
+void addNode(Graph* g, const char* label) 
+{
     if (!g || !label) return;
-
+    if (map_search(g->adjacencyMap, (void *)label) != NULL) return NULL;
+    
+    List *lista = list_create();
+    map_insert(Map *g->adjacencyMap, label, lista)
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
