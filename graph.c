@@ -113,8 +113,6 @@ void destroyGraph(Graph* g) {
         free(edgesList);
 
         // 3. Liberar la llave del mapa (el label origen)
-        free(label);
-
         pair = map_next(g->adjacencyMap);
     }
 
