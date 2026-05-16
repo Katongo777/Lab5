@@ -233,3 +233,20 @@ Fri May 15 10:49:17 PM UTC 2026:
 Sat May 16 04:16:01 AM UTC 2026: 
  tests:  0|0
 13136a1
+Sat May 16 04:20:35 AM UTC 2026: 
+ graph.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:63:57: error: ‘src’ undeclared (first use in this function)
+   63 |     MapPair *pair = map_search(g->adjacencyMap, (void *)src);
+      |                                                         ^~~
+graph.c:63:57: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:64:23: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   64 |     if (pair == NULL) return;
+      |                       ^~~~~~
+graph.c:61:7: note: declared here
+   61 | List* getEdges(Graph* g, const char* label) {
+      |       ^~~~~~~~
+762a853
