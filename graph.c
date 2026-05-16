@@ -97,7 +97,6 @@ void destroyGraph(Graph* g) {
 
     MapPair* pair = map_first(g->adjacencyMap);
     while (pair != NULL) {
-        char* label = (char*)pair->key;
         List* edgesList = (List*)pair->value;
 
         // 1. Liberar cada Arista (y su string 'target')
