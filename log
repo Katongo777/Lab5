@@ -283,3 +283,15 @@ graph.c:85:30: error: returning ‘int’ from a function with return type ‘Li
    85 |     if (pair == NULL) return -1;
       |                              ^
 0f5f7e3
+Sat May 16 04:44:57 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:84:57: error: ‘label1’ undeclared (first use in this function); did you mean ‘label’?
+   84 |     MapPair *pair = map_search(g->adjacencyMap, (void *)label1);
+      |                                                         ^~~~~~
+      |                                                         label
+graph.c:84:57: note: each undeclared identifier is reported only once for each function it appears in
+2027341
