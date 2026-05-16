@@ -268,3 +268,18 @@ Sat May 16 04:21:35 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 478a9bd
+Sat May 16 04:44:45 AM UTC 2026: 
+ graph.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:84:57: error: ‘label1’ undeclared (first use in this function); did you mean ‘label’?
+   84 |     MapPair *pair = map_search(g->adjacencyMap, (void *)label1);
+      |                                                         ^~~~~~
+      |                                                         label
+graph.c:84:57: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:85:30: error: returning ‘int’ from a function with return type ‘List *’ makes pointer from integer without a cast [-Wint-conversion]
+   85 |     if (pair == NULL) return -1;
+      |                              ^
+0f5f7e3
